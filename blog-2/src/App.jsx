@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Route,Routes,Link,useParams} from "react-router-dom";
+import { BrowserRouter as Router, Route,Routes,Link,useParams,Navigate} from "react-router-dom";
 
 function App() {
   const name = "sujith";
@@ -10,8 +10,12 @@ function App() {
   }
   const About = () => {
     const {name} = useParams();
+    
     return (
-      <h1>Name is {name}</h1>
+      <>
+        {name !== "sujith" ? <Navigate to="/" /> : null}
+        <h1>Name is {name}</h1>
+      </>
     )
   }
 
@@ -41,6 +45,7 @@ function App() {
         <Route path="/about/:name" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/search" element={<Search />} />
+        <Route path="*" element={<h1>!404 Found</h1>}/>
       </Routes>
 
     </Router>
@@ -53,3 +58,4 @@ export default App
 // Routes,Route,BrowserRouter,Link
 // npm install react-router-dom
 // instead anchor tag use Link
+// for redirecting we use Navigate
