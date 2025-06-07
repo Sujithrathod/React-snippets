@@ -1,6 +1,6 @@
 import { useState ,useEffect,useRef} from 'react'
 import './App.css'
-
+import {ComponentA ,ComponentB } from "./apiHandle"
 function App() {
   const [data,setData] = useState(null);
   useEffect(() =>{
@@ -12,6 +12,8 @@ function App() {
   return (
     <div>
       <h1>{data ? data.title : <p>Loading....</p>}</h1>
+      <ComponentA />
+      <ComponentB />
     </div>
   )
 }
