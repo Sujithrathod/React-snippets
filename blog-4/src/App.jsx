@@ -1,5 +1,7 @@
 import Sum from './components/Sum'
 import Info from './components/Info'
+import { Memo } from './components/Memo';
+
 function App() {
   const user = {
   id: 0,
@@ -12,6 +14,7 @@ function App() {
         <Sum firstNumber={22} secondNumber={25}/>
         <Info user={user}/>
         <Info />
+        <Memo  name = {"underoos"}/>
     </>
   )
 }
